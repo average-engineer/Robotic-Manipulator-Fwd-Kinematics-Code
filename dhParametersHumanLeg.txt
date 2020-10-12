@@ -1,0 +1,27 @@
+6		
+6		
+2
+0
+5
+   0	  0.420       0      -45  	       0.0245      1	  
+   0	  0.419 	  0      -30  	       0.0245      1	  
+   0	  0.200  	  0	      90		   0.0349      1
+   0	  0.419		  0       45  	       0.0245      1	 
+   0      0.420       0       30            0          1
+   0      0.100       0      -60            0          1
+   
+% alpha(i)	 a(i)      d(i)   theta(i)      dQ_dt(i)   flag(i)
+  (deg)      (m)       (m)     (deg)        (rad/s)    (1/0) 
+
+%************************************************************************** 
+% POINTS TO BE NOTED 
+%************************************************************************** 
+%DH table and frames to be analyzed to be input according to Distal parameters 
+% Line 1 = Number of Joints (NJ)
+% Line 2 = Degree of Freedom of Cartesian Space (DOF)
+% Line 3 = Distal or Proximal DH parameters (1 for distal and 2 for proximal)
+% Line 4 = Reference Frame
+% Line 5 = Frame being analysed
+
+% Please enter the angles (alpha & theta) in degrees. Code will change it 
+% to radians automatically.
