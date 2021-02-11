@@ -32,19 +32,24 @@ The validation is carried out using an external marker dataset. This type of dat
 Here, the markers attached to the lower limbs are taken into consideration. For each marker, its trajectory in the cartesian space is available. The human leg is modelled as a 3 link manipulator, with 3 revolute joints (hip, knee and ankle) and the base at the hip which is moving too. Only the sagittal plane movement is considered. The joint angles and link lengths are computed using the marker trajectores. The forward kinematics code is applied with the joint angles and the segment lengths as input, and the output trajectories are compared with the available marker trajectories. The 2 markers used for this validation are: Left Ankle Marker and Right Knee Marker.
 
 **Validation Structure**
+
 [Validation](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/fwd_kinematics_model_validation.PNG)
 
 **Validation Results**
 - Left Ankle X
+
 [Left Ankle X](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/left%20ankle%20marker%20x.PNG)
 
 - Left Ankle Z
+
 [Left Ankle Z](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/left%20ankle%20marker%20Z.PNG)
 
 - Right Knee X
+
 [Right Knee X](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/right%20knee%20marker%20X.PNG)
 
 - Right Knee Z
+
 [Right Knee Z](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/right%20knee%20marker%20Z.PNG)
 
 The marker trajectories and the forward kinematics calculated trajectories match, thus the code has been validated.
