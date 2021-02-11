@@ -33,23 +33,23 @@ Here, the markers attached to the lower limbs are taken into consideration. For 
 
 **Validation Structure**
 
-[Validation](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/fwd_kinematics_model_validation.PNG)
+![Validation](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/fwd_kinematics_model_validation.PNG)
 
 **Validation Results**
 - Left Ankle X
 
-[Left Ankle X](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/left%20ankle%20marker%20x.PNG)
+![Left Ankle X](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/left%20ankle%20marker%20x.PNG)
 
 - Left Ankle Z
 
-[Left Ankle Z](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/left%20ankle%20marker%20Z.PNG)
+![Left Ankle Z](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/left%20ankle%20marker%20Z.PNG)
 
 - Right Knee X
 
-[Right Knee X](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/right%20knee%20marker%20X.PNG)
+![Right Knee X](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/right%20knee%20marker%20X.PNG)
 
 - Right Knee Z
 
-[Right Knee Z](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/right%20knee%20marker%20Z.PNG)
+![Right Knee Z](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/right%20knee%20marker%20Z.PNG)
 
 The marker trajectories and the forward kinematics calculated trajectories match, thus the code has been validated.
