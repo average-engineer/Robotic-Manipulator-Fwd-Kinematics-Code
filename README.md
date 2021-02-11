@@ -1,4 +1,6 @@
 # Robotic-Manipulator-Fwd-Kinematics-Code
+[Forward and Inverse Kinematics](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/fwd_inv_kinematics.PNG)
+
 Forward Kinematics code for robotic manipulator having any number of DOF. For a given set of link parameters and joint variables of any manipulator and the reference frame number and the tip frame number, the code outputs the concatenated homogenous transformation matrix from the reference frame to the tip frame.
 
 The code takes the link parameter and joint varriable inputs in the form of a distal DH parameter table, where link rotation and link length are the link parameters and joint rotation (for revolute joints) and joint translation (for prismatic joints) are the joint variables. 
@@ -23,3 +25,26 @@ Explanation of the included scripts:
 
 7). `T_Concat_proximal.m`: This is the function which calculates the final concatenated transformation matrix for the two input frames. This function is for the proximal DH parameters.
 
+
+# Validation of Forward Kinematics Code:
+The validation is carried out using an external marker dataset. This type of dataset is usually recorded in a gait lab where a human subject has to walk in a particular direction and form with markers attached to their body, which helps the many cameras and sensors present in the gait lab to record the movement of the subject. With the help of the movement data, a lot of information about the kinematics of gait motion can be extracted like anatomical joint angles, subject segment velocities and accelerations and joint dynamics.
+
+Here, the markers attached to the lower limbs are taken into consideration. For each marker, its trajectory in the cartesian space is available. The human leg is modelled as a 3 link manipulator, with 3 revolute joints (hip, knee and ankle) and the base at the hip which is moving too. Only the sagittal plane movement is considered. The joint angles and link lengths are computed using the marker trajectores. The forward kinematics code is applied with the joint angles and the segment lengths as input, and the output trajectories are compared with the available marker trajectories. The 2 markers used for this validation are: Left Ankle Marker and Right Knee Marker.
+
+**Validation Structure**
+[Validation](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/fwd_kinematics_model_validation.PNG)
+
+**Validation Results**
+- Left Ankle X
+[Left Ankle X](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/left%20ankle%20marker%20x.PNG)
+
+- Left Ankle Z
+[Left Ankle Z](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/left%20ankle%20marker%20Z.PNG)
+
+- Right Knee X
+[Right Knee X](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/right%20knee%20marker%20X.PNG)
+
+- Right Knee Z
+[Right Knee Z](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/right%20knee%20marker%20Z.PNG)
+
+The marker trajectories and the forward kinematics calculated trajectories match, thus the code has been validated.
