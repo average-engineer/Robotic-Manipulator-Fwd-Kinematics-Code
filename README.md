@@ -1,5 +1,5 @@
 # Robotic-Manipulator-Fwd-Kinematics-Code
-[Forward and Inverse Kinematics](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/fwd_inv_kinematics.PNG)
+![Forward and Inverse Kinematics](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/fwd_inv_kinematics.PNG)
 
 Forward Kinematics code for robotic manipulator having any number of DOF. For a given set of link parameters and joint variables of any manipulator and the reference frame number and the tip frame number, the code outputs the concatenated homogenous transformation matrix from the reference frame to the tip frame.
 
