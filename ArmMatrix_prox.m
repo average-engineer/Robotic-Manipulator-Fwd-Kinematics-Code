@@ -25,7 +25,7 @@ alpha = zeros(NF,1);    % alpha(k)  =   Twist Angle (Angle b/w Z(k-1) & Z(k) alo
 a = zeros(NF,1);        % a(k)      =   Link Length (Distance from Z(k-1) to Z(k) along X(k))
 theta = zeros(NF,1);    % theta(k)  =   Joint Angle (Angle b/w X(k-1) & X(k) along Z(k-1)
 d = zeros(NF,1);        % d(k)      =   Joint Offset(Distance from X(k-1) to X(k) along Z(k-1)
-flag = zeros(NF,1);     % flag(k)   =   Decision about the Joint Type (Rotational(flag=1) or Prismatic (flag=0)) 
+flag = zeros(NJ,1);     % flag(k)   =   Decision about the Joint Type (Rotational(flag=1) or Prismatic (flag=0)) 
 dQ_dt = zeros(NF,1);    % dQ_dt(k)  =   Actuator Velocity
 
 for k=1:NJ
@@ -40,8 +40,13 @@ end
 % be included in the distal DH table
 
 % CALCULATE THE ARM MATRIX
-for k = 1:NJ
+for k = 0:NJ
      %here the tranformation from the base frame to the 1st frame is not taken into account
-    A(:,:,k) =   [cos(theta(k+1)),-sin(theta(k+1)),0,a(k+1);sin(theta(k+1))*cos(alpha(k+1)),cos(alpha(k+1))*cos(theta(k+1)),-sin(alpha(k+1)),-d(k+1)*sin(alpha(k+1));sin(theta(k+1))*sin(alpha(k+1)),sin(alpha(k+1))*cos(theta(k+1)),cos(alpha(k+1)),d(k+1)*cos(alpha(k+1));0,0,0,1];
+     %A(:,:,k) =   [cos(theta(k+1)),-sin(theta(k+1)),0,a(k+1);sin(theta(k+1))*cos(alpha(k+1)),cos(alpha(k+1))*cos(theta(k+1)),-sin(alpha(k+1)),-d(k+1)*sin(alpha(k+1));sin(theta(k+1))*sin(alpha(k+1)),sin(alpha(k+1))*cos(theta(k+1)),cos(alpha(k+1)),d(k+1)*cos(alpha(k+1));0,0,0,1];
+     %for the above expression change k from 1 to NJ
+    
+     %if transformation from base to 1st frame (0T1) has to be included
+    A(:,:,k+1) =   [cos(theta(k+1)),-sin(theta(k+1)),0,a(k+1);sin(theta(k+1))*cos(alpha(k+1)),cos(alpha(k+1))*cos(theta(k+1)),-sin(alpha(k+1)),-d(k+1)*sin(alpha(k+1));sin(theta(k+1))*sin(alpha(k+1)),sin(alpha(k+1))*cos(theta(k+1)),cos(alpha(k+1)),d(k+1)*cos(alpha(k+1));0,0,0,1];
+
 end  
 
