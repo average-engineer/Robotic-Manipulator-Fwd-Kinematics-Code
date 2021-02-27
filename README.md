@@ -27,7 +27,18 @@ Explanation of the included scripts:
 
 
 # Validation of Forward Kinematics Code:
-The validation is carried out using an external marker dataset. This type of dataset is usually recorded in a gait lab where a human subject has to walk in a particular direction and form with markers attached to their body, which helps the many cameras and sensors present in the gait lab to record the movement of the subject. With the help of the movement data, a lot of information about the kinematics of gait motion can be extracted like anatomical joint angles, subject segment velocities and accelerations and joint dynamics.
+The validation of the kinematics code is two fold:
+The first validation is carried out by developing a kinematic model of a augmentative lower extremity exoskeleton known as LEPES (Lower Extremity Power Assisted Exoskeleton System) developed by the Robotics lab of Beijing Forestry University, China (Yanbei Li *et all*, "Dynamics and Kinematic Analysis and Simulation of Lower Extremity Power-Assisted Exoskeleton", *JVE International Ltd. Journal of Vibroengineering*, vol. 16, no. 2, pp. 1392-8796, January, 2014). Both distal and proximal DH parameters based kinematic models of LEPES are developed and fed into the code.
+The configuration of LEPES is taken as following:
+![Validation](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/LEPES Config.PNG)
+
+The following kinematic models are created:
+![Validation](https://github.com/average-engineer/Robotic-Manipulator-Fwd-Kinematics-Code/blob/main/LEPES Kinematic Models.PNG)
+
+The single support phase is taken for the configuration, with the position and orientation of the swinging leg's ankle with respect to the stanced leg's ankle is computed. The code result is compared with manual calculations using the transformation formulae given in the above referenced paper which match when the proximal calculations are used in the code.
+
+
+The 2nd validation is carried out using an external marker dataset. This type of dataset is usually recorded in a gait lab where a human subject has to walk in a particular direction and form with markers attached to their body, which helps the many cameras and sensors present in the gait lab to record the movement of the subject. With the help of the movement data, a lot of information about the kinematics of gait motion can be extracted like anatomical joint angles, subject segment velocities and accelerations and joint dynamics.
 
 Here, the markers attached to the lower limbs are taken into consideration. For each marker, its trajectory in the cartesian space is available. The human leg is modelled as a 3 link manipulator, with 3 revolute joints (hip, knee and ankle) and the base at the hip which is moving too. Only the sagittal plane movement is considered. The joint angles and link lengths are computed using the marker trajectores. The forward kinematics code is applied with the joint angles and the segment lengths as input, and the output trajectories are compared with the available marker trajectories. The 2 markers used for this validation are: Left Ankle Marker and Right Knee Marker.
 
